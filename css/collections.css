@@ -1,0 +1,116 @@
+.collections__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 335px);
+  grid-template-rows: 178px auto 178px;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  grid-template-areas:
+    "item1 item2 item3 item4"
+    ". popular popular ."
+    "item5 item6 item7 item8";
+}
+
+/* Назначаем области */
+.item-1 { grid-area: item1; }
+.item-2 { grid-area: item2; }
+.item-3 { grid-area: item3; }
+.item-4 { grid-area: item4; height: 333px; }
+.item-5 { grid-area: item5; height: 333px; margin-top: -155px; }
+.item-6 { grid-area: item6; }
+.item-7 { grid-area: item7; }
+.item-8 { grid-area: item8; }
+.popular { grid-area: popular; }
+
+/* Общие стили для блоков */
+.collections__item {
+  position: relative;
+  background-color: var(--color-black);
+  padding: 20px;
+  border-radius: 8px;
+  color: var(--color-white);
+}
+
+.collection {
+  color: var(--color-half-dark-grey);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.collection-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Картинки справа через ::after */
+.collections__item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -2px;
+  transform: translateY(-50%);
+  width: 135px;
+  height: 178px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item-4::after,
+.item-5::after {
+  width: 181px;
+  height: 239px;
+  top: 60%;
+}
+
+/* Картинки для каждого блока */
+.item-1::after { background-image: url('../img/image_1.png'); }
+.item-2::after { background-image: url('../img/image_2.png'); }
+.item-3::after { background-image: url('../img/image_3.png'); }
+.item-4::after { background-image: url('../img/image_4.png'); }
+.item-5::after { background-image: url('../img/image_5.png'); }
+.item-6::after { background-image: url('../img/image_6.png'); }
+.item-7::after { background-image: url('../img/image_7.png'); }
+.item-8::after { background-image: url('../img/image_8.png'); }
+
+/* Блок "Популярные коллекции" */
+.popular {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  background-color: transparent;
+}
+
+.popular h1 {
+  color: var(--color-black);
+  font-size: 32px;
+  margin: 0;
+}
+
+.popular .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 12px 24px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-radius: 8px;
+}
+
+@media (max-width: 1200px) {
+  .collections__gallery {
+    grid-template-columns: repeat(3, 275px);
+  }
+}
+
+@media (max-width: 744px){
+  
+}
+
+@media (max-width: 320px){
+  
+}

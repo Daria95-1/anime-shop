@@ -1,0 +1,92 @@
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: none;
+    
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--color-white);
+    width: 700px;
+    height: 384px;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal__close {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-black);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--color-white);
+    font-size: 24px;
+    line-height: 44px;
+    text-align: center;
+}
+
+.modal__close::before {
+    content: "×";
+}
+
+.modal__title {
+    margin: 84px 0 0 0;
+    font-size: 24px;
+}
+
+input {
+    width: 100%;
+    background-color: var(--color-grey);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    height: 60px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#submitBtn {
+    padding: 10px 20px;
+    background: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    width: 145px;
+    height: 56px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#submitBtn:disabled {
+    background: var(--color-dark-grey);
+    cursor: not-allowed;
+}
+
+.modal__footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.modal__note {
+    font-size: 14px;
+    color: var(--color-dark-grey);
+}

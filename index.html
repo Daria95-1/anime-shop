@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Тестовое задание — главный экран</title>
+
+  <!-- Manrope из Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/new_arrivals.css" />
+  <link rel="stylesheet" href="css/collections.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="#" aria-label="Логотип">
+        <img src="img/logo.png" alt="Логотип" width="80" height="57">
+      </a>
+
+      <nav class="site-header__nav" aria-label="Основная навигация">
+        <ul class="nav" id="main-nav">
+          <li class="nav__item"><a class="nav__link" href="#">Аниме</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Футболки</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Лонгсливы</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Худи</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Инфо</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Новости</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-right">
+        <a class="contact contact--phone" href="tel:+79000000000" aria-label="Позвонить">
+          <img src="img/icons/phone.svg" alt="">
+          <span class="contact__text">+7 900 000-00-00</span>
+        </a>
+  
+        <div class="user-container" aria-hidden="false">
+          <a class="contact contact--user" href="mailto:Alexsandеr@gmail.com" aria-label="Написать">
+            <img src="img/icons/user.svg" alt="">
+            <span class="contact__text">Alexsandеr@gm...</span>
+            <span class="contact__score">10 000 бал.</span>
+          </a>
+        </div>
+  
+        <div class="header-icons" role="group" aria-label="Действия">
+          <button class="icon-btn" aria-label="Поиск">
+            <img src="img/icons/search.svg" alt="" width="18" height="18">
+          </button>
+          <button class="icon-btn" aria-label="Избранное">
+            <img src="img/icons/favorite.svg" alt="" width="18" height="18">
+          </button>
+          <button class="icon-btn" aria-label="Корзина">
+            <img src="img/icons/shopping-bag.svg" alt="" width="18" height="18">
+          </button>
+        </div>
+      </div>
+    </div>
+
+      <!-- Глобальное подменю (одно на все пункты) -->
+      <div class="submenu" id="global-submenu" aria-label="Подменю коллекций" hidden>
+        <ul class="submenu-list">
+          <li><a href="#">Магическая битва</a></li>
+          <li><a href="#">Клинок, рассекающий демонов</a></li>
+          <li><a href="#">Берсерк</a></li>
+          <li><a href="#">Баскетбол Куроко</a></li>
+          <li><a href="#">Человек-бензопила</a></li>
+          <li><a href="#">Моя геройская академия</a></li>
+          <li><a href="#">Евангелион</a></li>
+          <li><a href="#">Блич</a></li>
+        </ul>
+
+        <ul class="submenu-list">
+          <li><a href="#">Магическая битва</a></li>
+          <li><a href="#">Клинок, рассекающий демонов</a></li>
+          <li><a href="#">Берсерк</a></li>
+          <li><a href="#">Баскетбол Куроко</a></li>
+          <li><a href="#">Человек-бензопила</a></li>
+          <li><a href="#">Моя геройская академия</a></li>
+          <li><a href="#">Евангелион</a></li>
+          <li><a href="#">Блич</a></li>
+        </ul>
+
+        <ul class="submenu-list">
+          <li><a href="#">Магическая битва</a></li>
+          <li><a href="#">Клинок, рассекающий демонов</a></li>
+          <li><a href="#">Берсерк</a></li>
+          <li><a href="#">Баскетбол Куроко</a></li>
+          <li><a href="#">Человек-бензопила</a></li>
+          <li><a href="#">Моя геройская академия</a></li>
+          <li><a href="#">Евангелион</a></li>
+          <li><a href="#">Блич</a></li>
+        </ul>
+      </div>
+      <!-- /Глобальное подменю -->
+  </header>
+
+  <main class="page-main">
+    <!-- Главынй блок -->
+    <section class="hero" aria-label="Главный баннер">
+      <div class="hero__inner">
+        <div class="hero__card" aria-hidden="false">
+          <img src="img/main.png" alt="Главный баннер" width="1400" height="821" class="hero__image">
+
+          <button class="hero__arrow hero__arrow--left" type="button" aria-label="Предыдущий">
+            <img src="img/icons/arrow.svg" alt="">
+          </button>
+
+          <button class="hero__arrow hero__arrow--right" type="button" aria-label="Следующий">
+            <img src="img/icons/arrow.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Новинки -->
+    <section class="new-products" aria-labelledby="new-products-title">
+      <div class="new-products__inner">
+        <div class="new-products__header">
+          <h2 class="section-title" id="new-products-title">Новинки</h2>
+          <a href="#" class="btn">
+            <span>Все новинки</span>
+            <img src="img/icons/arrow.svg" alt="">
+          </a>
+        </div>
+
+        <ul class="products">
+          <li class="product-card">
+            <div class="product-card__header">
+              <span>NEW!</span>
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <img src="img/icons/favorite.svg" alt="">
+              </button>
+            </div>
+            
+            <img src="img/t-short_1.png" alt="Футболка 1" class="product-card__image">
+
+            <h3 class="product-card__main-title">КЛИНОК РАССЕКАЮЩИЙ ДЕМОН</h3>
+            <p class="product-card__title">Футболка аниме, чёрный цвет, 46 размер, 100% хлопок</p>
+
+            <div class="product-card__prices">
+              <span class="product-card__price-current">10 000 ₽</span>
+              <span class="product-card__price-old">20 000 ₽</span>
+            </div>
+          </li>
+          <li class="product-card">
+            <div class="product-card__header">
+              <span>NEW!</span>
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <img src="img/icons/favorite.svg" alt="">
+              </button>
+            </div>
+            
+            <img src="img/t-short_2.png" alt="Футболка 2" class="product-card__image">
+
+            <h3 class="product-card__main-title">Магическая битва</h3>
+            <p class="product-card__title">Футболка Магическая битва</p>
+
+            <div class="product-card__prices">
+              <span class="product-card__price-current">10 000 ₽</span>
+              <span class="product-card__price-old">20 000 ₽</span>
+            </div>
+          </li>
+          <li class="product-card">
+            <div class="product-card__header">
+              <span>NEW!</span>
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <img src="img/icons/favorite.svg" alt="">
+              </button>
+            </div>
+            
+            <img src="img/t-short_3.png" alt="Футболка 3" class="product-card__image">
+
+            <h3 class="product-card__main-title">КЛИНОК РАССЕКАЮЩИЙ ДЕМОН</h3>
+            <p class="product-card__title">Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок</p>
+
+            <div class="product-card__prices">
+              <span class="product-card__price-current">10 000 ₽</span>
+              <span class="product-card__price-old">20 000 ₽</span>
+            </div>
+          </li>
+          <li class="product-card">
+            <div class="product-card__header">
+              <span>NEW!</span>
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <img src="img/icons/favorite.svg" alt="">
+              </button>
+            </div>
+             
+            <img src="img/t-short_4.png" alt="Футболка 4" class="product-card__image">
+
+            <h3 class="product-card__main-title">КЛИНОК РАССЕКАЮЩИЙ ДЕМОН</h3>
+            <p class="product-card__title">Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок</p>
+
+            <div class="product-card__prices">
+              <span class="product-card__price-current">10 000 ₽</span>
+              <span class="product-card__price-old">20 000 ₽</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="new-products__arrows">
+          <button class="new-products__arrow new-products__arrow--left">
+            <img src="img/icons/arrow.svg" alt="left">
+          </button>
+          <button class="new-products__arrow new-products__arrow--right">
+            <img src="img/icons/arrow.svg" alt="right">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Коллекции -->
+    <section class="collections" aria-label="Коллекции">
+      <div class="collections__inner">
+        <div class="collections__gallery">
+          <div class="collections__item item-1">
+            <h3 class="collection">Коллекция</h3>
+            <h2 class="collection-title">Магическая битва</h2>
+          </div>
+
+          <div class="collections__item item-2">
+            <h3 class="collection">Коллекция</h3>
+            <h2 class="collection-title">Человек — бензопила</h2>
+          </div>
+
+          <div class="collections__item item-3">
+            <h3 class="collection">Коллекция</h3>
+            <h2 class="collection-title">Евангелион</h2>
+          </div>
+
+          <div class="collections__item item-4">
+            <h3 class="collection">Коллекция</h3>
+            <h2 class="collection-title">Клинок рассекающий демонов</h2>
+          </div>
+
+          <div class="collections__item popular">
+            <h1>Популярные коллекции</h1>
+            <a href="#" class="btn">
+              <span>Все коллекции</span>
+              <img src="img/icons/arrow.svg" alt="">
+            </a>
+          </div>
+
+          <div class="collections__item item-5">
+            <h3 class="collection">Коллекция</h3>
+            <h2 class="collection-title">Клинок рассекающий демонов</h2>
+          </div>
+
+          <div class="collections__item item-6">
+            <h3 class="collection">Коллекция</h3>
+            <h2 class="collection-title">Моя геройская академия</h2>
+          </div>
+
+          <div class="collections__item item-7">
+            <h3 class="collection">Коллекция</h3>
+            <h2 class="collection-title">Блич</h2>
+          </div>
+
+          <div class="collections__item item-8">
+            <h3 class="collection">Коллекция</h3>
+            <h2 class="collection-title">One-Punch Man</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Модальное окно -->
+  <div class="modal" id="callbackModal" hidden>
+    <div class="modal__content">
+      <button class="modal__close" id="modalClose" aria-label="Закрыть"></button>
+      <h2 class="modal__title">Обратный звонок</h2>
+      <form id="callbackForm">
+        <input type="text" id="nameInput" placeholder="Ваше имя" required>
+        <input type="tel" id="phoneInput" placeholder="Номер телефона" required>
+        <div class="modal__footer">
+          <button type="submit" id="submitBtn" disabled>Отправить</button>
+          <span class="modal__note">Нажимая кнопку, вы соглашаетесь с обработкой ваших персональных данных</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
