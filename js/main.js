@@ -1,37 +1,78 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ===== Hero слайдер =====
   const heroCard = document.querySelector('.hero__card');
   const heroArrowLeft = document.querySelector('.hero__arrow--left');
   const heroArrowRight = document.querySelector('.hero__arrow--right');
 
-  heroArrowLeft.addEventListener('click', () => {
-    heroCard.classList.add('is-anim-left');
-    setTimeout(() => heroCard.classList.remove('is-anim-left'), 420);
+  if (heroCard) {
+    heroArrowLeft.addEventListener('click', () => {
+      heroCard.classList.add('is-anim-left');
+      setTimeout(() => heroCard.classList.remove('is-anim-left'), 420);
+    });
+
+    heroArrowRight.addEventListener('click', () => {
+      heroCard.classList.add('is-anim-right');
+      setTimeout(() => heroCard.classList.remove('is-anim-right'), 420);
+    });
+  }
+
+  // ===== Новинки слайдер =====
+  const container = document.querySelector('.products');
+  const btnLeft = document.querySelector('.new-products__arrow--left');
+  const btnRight = document.querySelector('.new-products__arrow--right');
+
+  function getScrollAmount() {
+    const card = container.querySelector('.product-card');
+    if (!card) return 0;
+    const style = getComputedStyle(container);
+    const gap = parseInt(style.gap) || 20;
+    return card.offsetWidth + gap;
+  }
+
+  btnLeft.addEventListener('click', () => {
+    container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
   });
 
-  heroArrowRight.addEventListener('click', () => {
-    heroCard.classList.add('is-anim-right');
-    setTimeout(() => heroCard.classList.remove('is-anim-right'), 420);
+  btnRight.addEventListener('click', () => {
+    container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
   });
 
-  // Новинки arrows
-  const newProductsInner = document.querySelector('.new-products__inner');
-  const newArrowLeft = document.querySelector('.new-products__arrow--left');
-  const newArrowRight = document.querySelector('.new-products__arrow--right');
+  function initMobilePagination() {
+    const container = document.querySelector('.products');
+    const pagination = document.querySelector('.products-pagination');
+    if (!container || !pagination) return;
 
-  newArrowLeft.addEventListener('click', () => {
-    newProductsInner.classList.add('is-anim-left');
-    newProductsInner.scrollBy({ left: -320, behavior: 'smooth' });
-    setTimeout(() => newProductsInner.classList.remove('is-anim-left'), 420);
+    const cards = container.querySelectorAll('.product-card');
+    const cardWidth = cards[0]?.offsetWidth || 0;
+    const gap = parseInt(getComputedStyle(container).gap) || 0;
+    const scrollStep = cardWidth + gap;
+    const totalPages = Math.ceil(container.scrollWidth / scrollStep);
+
+    pagination.innerHTML = '';
+    for (let i = 0; i < totalPages; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('products-pagination__dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        container.scrollTo({ left: i * scrollStep, behavior: 'smooth' });
+      });
+      pagination.appendChild(dot);
+    }
+
+  container.addEventListener('scroll', () => {
+    const index = Math.round(container.scrollLeft / scrollStep);
+    pagination.querySelectorAll('.products-pagination__dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
   });
+}
 
-  newArrowRight.addEventListener('click', () => {
-    newProductsInner.classList.add('is-anim-right');
-    newProductsInner.scrollBy({ left: 320, behavior: 'smooth' });
-    setTimeout(() => newProductsInner.classList.remove('is-anim-right'), 420);
-  });
+  if (window.innerWidth <= 360) {
+    initMobilePagination();
+  }
 
-  // Работа с шапкой при скролле
-  const header = document.querySelector('.site-header__inner');
+  // ===== Шапка при скролле =====
+  const header = document.querySelector('.site-header');
   const hero = document.querySelector('.hero__card');
 
   if (header && hero) {
@@ -47,21 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== Подменю =====
-    // ===== Подменю =====
   const navItems = document.querySelectorAll('.nav__item');
   const submenu = document.querySelector('.submenu');
 
   if (navItems.length && submenu) {
     let isOverNav = false;
     let isOverSubmenu = false;
-
-    function updateSubmenu() {
-      if (isOverNav || isOverSubmenu) {
-        submenu.style.display = 'grid';
-      } else {
-        submenu.style.display = 'none';
-      }
-    }
 
     navItems.forEach(item => {
       item.addEventListener('mouseenter', () => {
@@ -91,23 +123,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputs = [document.getElementById('nameInput'), document.getElementById('phoneInput')];
   const phoneLink = document.querySelector('.contact--phone');
 
-  // Открытие модалки
-  phoneLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    modal.classList.add('show'); // Добавляем класс 'show', чтобы показать модалку
-  });
+  if (phoneLink) {
+    phoneLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      modal.classList.add('show');
+    });
+  }
 
-  // Закрытие модалки
-  closeBtn.addEventListener('click', () => {
-    modal.classList.remove('show');
-  });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('show');
+    });
+  }
 
-  // Закрытие по клику на подложку
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.remove('show');
-  });
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('show');
+    });
+  }
 
-  // Включение кнопки отправки
   inputs.forEach(input => {
     input.addEventListener('input', () => {
       submitBtn.disabled = inputs.some(i => !i.value);

@@ -40,7 +40,7 @@
           <img src="img/icons/phone.svg" alt="">
           <span class="contact__text">+7 900 000-00-00</span>
         </a>
-  
+
         <div class="user-container" aria-hidden="false">
           <a class="contact contact--user" href="mailto:Alexsandеr@gmail.com" aria-label="Написать">
             <img src="img/icons/user.svg" alt="">
@@ -48,7 +48,7 @@
             <span class="contact__score">10 000 бал.</span>
           </a>
         </div>
-  
+
         <div class="header-icons" role="group" aria-label="Действия">
           <button class="icon-btn" aria-label="Поиск">
             <img src="img/icons/search.svg" alt="" width="18" height="18">
@@ -60,45 +60,29 @@
             <img src="img/icons/shopping-bag.svg" alt="" width="18" height="18">
           </button>
         </div>
+
+        <!-- Бургер -->
+        <button class="burger" aria-label="Открыть меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
 
-      <!-- Глобальное подменю (одно на все пункты) -->
-      <div class="submenu" id="global-submenu" aria-label="Подменю коллекций" hidden>
-        <ul class="submenu-list">
-          <li><a href="#">Магическая битва</a></li>
-          <li><a href="#">Клинок, рассекающий демонов</a></li>
-          <li><a href="#">Берсерк</a></li>
-          <li><a href="#">Баскетбол Куроко</a></li>
-          <li><a href="#">Человек-бензопила</a></li>
-          <li><a href="#">Моя геройская академия</a></li>
-          <li><a href="#">Евангелион</a></li>
-          <li><a href="#">Блич</a></li>
-        </ul>
-
-        <ul class="submenu-list">
-          <li><a href="#">Магическая битва</a></li>
-          <li><a href="#">Клинок, рассекающий демонов</a></li>
-          <li><a href="#">Берсерк</a></li>
-          <li><a href="#">Баскетбол Куроко</a></li>
-          <li><a href="#">Человек-бензопила</a></li>
-          <li><a href="#">Моя геройская академия</a></li>
-          <li><a href="#">Евангелион</a></li>
-          <li><a href="#">Блич</a></li>
-        </ul>
-
-        <ul class="submenu-list">
-          <li><a href="#">Магическая битва</a></li>
-          <li><a href="#">Клинок, рассекающий демонов</a></li>
-          <li><a href="#">Берсерк</a></li>
-          <li><a href="#">Баскетбол Куроко</a></li>
-          <li><a href="#">Человек-бензопила</a></li>
-          <li><a href="#">Моя геройская академия</a></li>
-          <li><a href="#">Евангелион</a></li>
-          <li><a href="#">Блич</a></li>
-        </ul>
-      </div>
-      <!-- /Глобальное подменю -->
+    <!-- Глобальное подменю -->
+    <div class="submenu" id="global-submenu" aria-label="Подменю коллекций" hidden>
+      <ul class="submenu-list">
+        <li><a href="#">Магическая битва</a></li>
+        <li><a href="#">Клинок, рассекающий демонов</a></li>
+        <li><a href="#">Берсерк</a></li>
+        <li><a href="#">Баскетбол Куроко</a></li>
+        <li><a href="#">Человек-бензопила</a></li>
+        <li><a href="#">Моя геройская академия</a></li>
+        <li><a href="#">Евангелион</a></li>
+        <li><a href="#">Блич</a></li>
+      </ul>
+    </div>
   </header>
 
   <main class="page-main">
@@ -122,6 +106,8 @@
     <!-- Новинки -->
     <section class="new-products" aria-labelledby="new-products-title">
       <div class="new-products__inner">
+        <h2 class="mobil-title" id="new-products-title">Новинки</h2>
+
         <div class="new-products__header">
           <h2 class="section-title" id="new-products-title">Новинки</h2>
           <a href="#" class="btn">
@@ -205,6 +191,8 @@
           </li>
         </ul>
 
+        <div class="products-pagination"></div>
+
         <div class="new-products__arrows">
           <button class="new-products__arrow new-products__arrow--left">
             <img src="img/icons/arrow.svg" alt="left">
@@ -213,6 +201,11 @@
             <img src="img/icons/arrow.svg" alt="right">
           </button>
         </div>
+
+        <a href="#" class="mobil-btn">
+          <span>Все новинки</span>
+          <img src="img/icons/arrow.svg" alt="">
+        </a>
       </div>
     </section>
 
@@ -220,6 +213,8 @@
     <section class="collections" aria-label="Коллекции">
       <div class="collections__inner">
         <div class="collections__gallery">
+          <h2 class="mobil-title">Популярные коллекции</h2>
+
           <div class="collections__item item-1">
             <h3 class="collection">Коллекция</h3>
             <h2 class="collection-title">Магическая битва</h2>
@@ -268,6 +263,11 @@
             <h2 class="collection-title">One-Punch Man</h2>
           </div>
         </div>
+
+        <a href="#" class="mobil-btn">
+          <span>Все коллекции</span>
+          <img src="img/icons/arrow.svg" alt="">
+        </a>
       </div>
     </section>
   </main>
@@ -287,6 +287,22 @@
       </form>
     </div>
   </div>
+
+  <!-- Bar menu -->
+  <nav class="mobile-bottom-nav">
+    <a href="#" class="nav-item">
+      <img src="img/icons/user.svg" alt="User">
+    </a>
+    <a href="#" class="nav-item">
+      <img src="img/icons/search.svg" alt="Search">
+    </a>
+    <a href="#" class="nav-item">
+      <img src="img/icons/favorite.svg" alt="Favorite">
+    </a>
+    <a href="#" class="nav-item">
+      <img src="img/icons/shopping-bag.svg" alt="Cart">
+    </a>
+  </nav>
 
   <script src="js/main.js" defer></script>
 </body>

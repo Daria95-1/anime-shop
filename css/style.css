@@ -9,6 +9,7 @@
   --menu-weight: 700;
   --hero-radius: 18px;
 
+  --color-background: #F1F4F5;
   --color-white: #ffffff;
   --color-grey: #E0E0E0;
   --color-half-dark-grey: #8C8C8C;
@@ -27,7 +28,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-black);
-  background: var(--color-white);
+  background: var(--color-background);
 }
 
 a {
@@ -48,4 +49,49 @@ button {
   width: var(--container-max-width);
   margin: 0 auto;
   padding: 0;
+}
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+.mobil-title {
+  display: none;
+}
+
+.mobil-btn {
+  display: none;
+}
+
+.page-main {
+  padding-bottom: calc(60px + 20px);
+}
+
+@media (max-width: 360px){
+  .mobil-title {
+    max-width: 340px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    margin: 0 0 20px 0;
+  }
+
+  .mobil-btn {
+    display: flex;
+    max-width: 196px;
+    max-height: 60px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    background: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    scroll-margin-bottom: 80px;
+    gap: 10px;
+  }
 }

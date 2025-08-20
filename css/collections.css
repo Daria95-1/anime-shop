@@ -1,3 +1,8 @@
+.collections {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
 .collections__gallery {
   display: grid;
   grid-template-columns: repeat(4, 335px);
@@ -11,7 +16,6 @@
     "item5 item6 item7 item8";
 }
 
-/* Назначаем области */
 .item-1 { grid-area: item1; }
 .item-2 { grid-area: item2; }
 .item-3 { grid-area: item3; }
@@ -22,7 +26,6 @@
 .item-8 { grid-area: item8; }
 .popular { grid-area: popular; }
 
-/* Общие стили для блоков */
 .collections__item {
   position: relative;
   background-color: var(--color-black);
@@ -42,7 +45,6 @@
   font-weight: 700;
 }
 
-/* Картинки справа через ::after */
 .collections__item::after {
   content: "";
   position: absolute;
@@ -63,7 +65,6 @@
   top: 60%;
 }
 
-/* Картинки для каждого блока */
 .item-1::after { background-image: url('../img/image_1.png'); }
 .item-2::after { background-image: url('../img/image_2.png'); }
 .item-3::after { background-image: url('../img/image_3.png'); }
@@ -73,7 +74,6 @@
 .item-7::after { background-image: url('../img/image_7.png'); }
 .item-8::after { background-image: url('../img/image_8.png'); }
 
-/* Блок "Популярные коллекции" */
 .popular {
   display: flex;
   flex-direction: column;
@@ -102,15 +102,79 @@
 }
 
 @media (max-width: 1200px) {
+  .collections {
+    max-width: var(--container-lg);
+  }
+
   .collections__gallery {
     grid-template-columns: repeat(3, 275px);
   }
 }
 
 @media (max-width: 744px){
-  
+  .collections {
+    max-width: var(--container-md);
+  }
+
+  .collections__gallery {
+    grid-template-columns: repeat(3, 228px);
+    grid-template-rows: 257px;
+    justify-content: center;
+    gap: 10px;
+
+    grid-template-areas:
+    "item1 item2 item3 "
+    "item4 popular item7"
+    "item5 item6  item8";
+  }
+
+  .collections__item {
+    width: 228px;
+    height: 257px;
+  }
+
+  .item-5 { grid-area: item5; margin-top: 0; }
+
+  .collections__item::after {
+    width: 135px;
+    height: 179px;
+    right: 2px;
+  }
 }
 
-@media (max-width: 320px){
-  
+@media (max-width: 360px){
+  .collections {
+    max-width: var(--container-sm);
+  }
+
+  .collections__inner {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .collections__gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .collections__item {
+    width: 340px;
+    height: 180px;
+  }
+
+  .popular {
+    display: none;
+  }
+
+  .collections__item::after {
+    width: 136px;
+    height: 180px;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+  }
 }
