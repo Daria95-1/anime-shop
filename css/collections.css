@@ -101,6 +101,24 @@
   border-radius: 8px;
 }
 
+.collection-arrow {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-dark-grey);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collection-arrow img {
+  width: 16px;
+  height: 16px;
+}
+
 @media (max-width: 1200px) {
   .collections {
     max-width: var(--container-lg);
